@@ -132,7 +132,7 @@ class TuyaHaNumber(TuyaHaDevice, NumberEntity):
     @property
     def name(self) -> str | None:
         """Return Tuya device name."""
-        return self.tuya_device.name + self._code
+        return self.tuya_device.name + " " + self._code.replace("_", " ").capitalize()
 
     @property
     def value(self) -> float:
